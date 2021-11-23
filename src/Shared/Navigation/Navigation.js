@@ -197,14 +197,17 @@ const Navigation = () => {
                             </Button>
                         </Link>
                         <Link
-                            to="appointments"
+                            to="/appointments"
                             style={{ textDecoration: "none" }}
                         >
                             <Button variant="text" sx={{ color: "white" }}>
                                 Appointments
                             </Button>
                         </Link>
-                        <Link to="dashboard" style={{ textDecoration: "none" }}>
+                        <Link
+                            to="/dashboard"
+                            style={{ textDecoration: "none" }}
+                        >
                             <Button variant="text" sx={{ color: "white" }}>
                                 Dashboard
                             </Button>
