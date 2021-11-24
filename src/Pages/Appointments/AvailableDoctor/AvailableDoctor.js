@@ -1,9 +1,10 @@
-import { CalendarToday } from "@mui/icons-material";
+import { CalendarToday, Schedule } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import { flexbox } from "@mui/system";
 import React from "react";
 import BookingModal from "../BookingModal/BookingModal";
 
@@ -46,22 +47,51 @@ const AvailableDoctor = ({ doctor, date }) => {
                                 m: 1,
                             }}
                         >
-                            {doctor.desc}
+                            {doctor.space} Spaces Available
                         </Box>
                     </Typography>
-                    <CalendarToday></CalendarToday>
-                    <Typography>
-                        <Box
-                            sx={{
-                                fontFamily: "Monospace",
-                                fontWeight: "bold",
-                            }}
-                        >
-                            {doctor.available.map((day) => (
-                                <span>{day} </span>
-                            ))}
-                        </Box>
-                    </Typography>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            m: 1,
+                        }}
+                    >
+                        <CalendarToday sx={{ pr: 1 }}></CalendarToday>
+                        <Typography>
+                            <Box
+                                sx={{
+                                    fontFamily: "Monospace",
+                                    fontWeight: "bold",
+                                }}
+                            >
+                                {doctor.availableDay.map((day) => (
+                                    <span>{day} </span>
+                                ))}
+                            </Box>
+                        </Typography>
+                    </Box>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            m: 1,
+                        }}
+                    >
+                        <Schedule sx={{ pr: 1 }} />
+                        <Typography>
+                            <Box
+                                sx={{
+                                    fontFamily: "Monospace",
+                                    fontWeight: "bold",
+                                }}
+                            >
+                                {doctor.time}
+                            </Box>
+                        </Typography>
+                    </Box>
                     <Button
                         onClick={handleOpen}
                         variant="contained"

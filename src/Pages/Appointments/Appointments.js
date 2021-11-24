@@ -4,31 +4,40 @@ import Calendar from "../../Shared/Calendar/Calendar";
 import Navigation from "../../Shared/Navigation/Navigation";
 import Box from "@mui/material/Box";
 import AvailableDoctor from "./AvailableDoctor/AvailableDoctor";
+import Typography from "@mui/material/Typography";
 
 const doctors = [
     {
         name: "Matthew Reyes",
         field: "Obstetrics & Gynaecology",
         desc: "University of California San Francisco Parnassus Campus",
-        available: ["Sat", "Mon", "Wed"],
+        availableDay: ["Sat", "Mon", "Wed"],
+        time: "6.00 PM - 10.00 PM",
+        space: 7,
     },
     {
         name: "Rebecca Gilbert",
         field: "Medicine Specialist",
         desc: "University of San Francisco Parnassus Campus",
-        available: ["Sun", "Tue", "Thu"],
+        availableDay: ["Sun", "Tue", "Thu"],
+        time: "8.00 PM - 11.00 PM",
+        space: 8,
     },
     {
         name: "Bobby Stanley",
         field: "Dermatologist",
         desc: "University of California San Francisco Parnassus Campus",
-        available: ["Sat", "Mon", "Wed"],
+        availableDay: ["Sat", "Mon", "Wed"],
+        time: "6.30 PM - 11.00 PM",
+        space: 10,
     },
     {
         name: "Kathryn Cooper",
         field: "Cardio Specialist",
         desc: "University of California San Francisco Parnassus Campus",
-        available: ["Sun", "Tue", "Thu"],
+        availableDay: ["Sun", "Tue", "Thu"],
+        time: "7.00 PM - 11.30 PM",
+        space: 5,
     },
 ];
 
@@ -39,7 +48,17 @@ const Appointments = () => {
         <div>
             <Navigation />
 
-            <h1>Select Date to Book Appointments</h1>
+            <Typography variant="h4">
+                <Box
+                    sx={{
+                        fontWeight: "bold",
+                        fontFamily: "Monospace",
+                        m: 2,
+                    }}
+                >
+                    Pick a Date to Book Appointments
+                </Box>
+            </Typography>
             <Divider />
             <Container sx={{ py: 3 }}>
                 <Grid
@@ -62,7 +81,17 @@ const Appointments = () => {
                 </Grid>
             </Container>
 
-            <h1>Available Doctors on {date.toDateString()}</h1>
+            <Typography variant="h4">
+                <Box
+                    sx={{
+                        fontWeight: "bold",
+                        fontFamily: "Monospace",
+                        m: 2,
+                    }}
+                >
+                    Available Doctors on {date.toDateString()}
+                </Box>
+            </Typography>
             <Divider />
             <Container sx={{ py: 3 }}>
                 <Grid
