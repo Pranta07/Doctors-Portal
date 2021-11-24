@@ -5,6 +5,8 @@ import Calendar from "../../Shared/Calendar/Calendar";
 import Navigation from "../../Shared/Navigation/Navigation";
 
 const Appointments = () => {
+    const [date, setDate] = React.useState(new Date());
+
     return (
         <div>
             <Navigation />
@@ -17,7 +19,7 @@ const Appointments = () => {
                     columns={{ xs: 4, sm: 8, md: 12 }}
                 >
                     <Grid item xs={4} sm={4} md={6}>
-                        <Calendar></Calendar>
+                        <Calendar date={date} setDate={setDate}></Calendar>
                     </Grid>
                     <Grid item xs={4} sm={4} md={6}>
                         <Box>
@@ -30,6 +32,7 @@ const Appointments = () => {
                     </Grid>
                 </Grid>
             </Container>
+            <h1>Available Appointments on {date.toDateString()}</h1>
         </div>
     );
 };
