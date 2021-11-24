@@ -1,12 +1,9 @@
-import { CalendarToday } from "@mui/icons-material";
-import { Typography } from "@mui/material";
-import { Paper } from "@mui/material";
-import { Button } from "@mui/material";
 import { Container, Divider, Grid } from "@mui/material";
-import { Box } from "@mui/system";
 import React from "react";
 import Calendar from "../../Shared/Calendar/Calendar";
 import Navigation from "../../Shared/Navigation/Navigation";
+import Box from "@mui/material/Box";
+import AvailableDoctor from "./AvailableDoctor/AvailableDoctor";
 
 const doctors = [
     {
@@ -74,59 +71,10 @@ const Appointments = () => {
                     columns={{ xs: 4, sm: 8, md: 12 }}
                 >
                     {doctors.map((doctor) => (
-                        <Grid item xs={4} sm={4} md={4}>
-                            <Paper sx={{ p: 3 }}>
-                                <Typography variant="h5">
-                                    <Box
-                                        sx={{
-                                            fontWeight: "bold",
-                                            fontFamily: "Monospace",
-                                            m: 1,
-                                        }}
-                                    >
-                                        {doctor.name}
-                                    </Box>
-                                </Typography>
-                                <Typography>
-                                    <Box
-                                        sx={{
-                                            fontFamily: "Monospace",
-                                            fontWeight: "bold",
-                                            m: 1,
-                                        }}
-                                    >
-                                        {doctor.field}
-                                    </Box>
-                                </Typography>
-                                <Typography>
-                                    <Box
-                                        sx={{
-                                            fontFamily: "Monospace",
-                                            fontWeight: "light",
-                                            m: 1,
-                                        }}
-                                    >
-                                        {doctor.desc}
-                                    </Box>
-                                </Typography>
-                                <CalendarToday></CalendarToday>
-                                <Typography>
-                                    <Box
-                                        sx={{
-                                            fontFamily: "Monospace",
-                                            fontWeight: "bold",
-                                        }}
-                                    >
-                                        {doctor.available.map((day) => (
-                                            <span>{day} </span>
-                                        ))}
-                                    </Box>
-                                </Typography>
-                                <Button variant="contained" sx={{ my: 1 }}>
-                                    Book Appointment
-                                </Button>
-                            </Paper>
-                        </Grid>
+                        <AvailableDoctor
+                            doctor={doctor}
+                            date={date.toDateString()}
+                        />
                     ))}
                 </Grid>
             </Container>
