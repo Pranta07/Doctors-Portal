@@ -21,7 +21,6 @@ import {
     Payment,
 } from "@mui/icons-material";
 import { Link, Outlet } from "react-router-dom";
-import MyAppointments from "../MyAppointments/MyAppointments";
 
 const drawerWidth = 240;
 
@@ -85,7 +84,7 @@ const Dashboard = (props) => {
             </List>
             <Divider />
             <List>
-                <ListItem button>
+                <ListItem button style={{ color: "blueviolet" }}>
                     <ListItemIcon>
                         <Logout></Logout>
                     </ListItemIcon>

@@ -1,11 +1,35 @@
+import { Container, Divider, Grid } from "@mui/material";
+import { Box } from "@mui/system";
 import React from "react";
+import Calendar from "../../Shared/Calendar/Calendar";
 import Navigation from "../../Shared/Navigation/Navigation";
 
 const Appointments = () => {
     return (
         <div>
             <Navigation />
-            <h1>This is Appointments Page</h1>
+            <h1>Select Date to Book Appointments</h1>
+            <Divider />
+            <Container sx={{ py: 3 }}>
+                <Grid
+                    container
+                    spacing={{ xs: 2, md: 3 }}
+                    columns={{ xs: 4, sm: 8, md: 12 }}
+                >
+                    <Grid item xs={4} sm={4} md={6}>
+                        <Calendar></Calendar>
+                    </Grid>
+                    <Grid item xs={4} sm={4} md={6}>
+                        <Box>
+                            <img
+                                src="https://i.ibb.co/fDfFXg8/hush-naidoo-jade-photography-yo01-Z-9-HQAw-unsplash.jpg"
+                                alt=""
+                                width="100%"
+                            />
+                        </Box>
+                    </Grid>
+                </Grid>
+            </Container>
         </div>
     );
 };
